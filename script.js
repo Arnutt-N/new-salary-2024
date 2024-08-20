@@ -14,15 +14,14 @@ document.addEventListener("DOMContentLoaded", () => {
     return (
       (item.id >= 45 && item.id <= 55) ||
       (item.id >= 128 && item.id <= 136) ||
-      (item.id >= 137 && item.id <= 145) ||      
-      (item.id >= 189 && item.id <= 196) ||     
-      (item.id >= 205 && item.id <= 212) || 
-      (item.id >= 227 && item.id <= 232) ||         
+      (item.id >= 137 && item.id <= 145) ||
+      (item.id >= 189 && item.id <= 196) ||
+      (item.id >= 205 && item.id <= 212) ||
+      (item.id >= 227 && item.id <= 232) ||
       (item.id >= 301 && item.id <= 308) ||
       (item.id >= 342 && item.id <= 350) ||
       (item.id >= 360 && item.id <= 368) ||
       (item.id >= 378 && item.id <= 388)
-      
     );
   });
 
@@ -69,12 +68,12 @@ document.getElementById("salaryCalcForm").addEventListener("submit", function (e
 
     // If the calculated new salary exceeds the salary new limit, adjust the new salary and notice
     if (newSalary > matchingData.salaryNewLimit) {
-      noticeMessage = `หมายเหตุ: จำนวนเงินที่ได้ปรับ ${salaryEarn} บาท เมื่อรวมกับอัตราเงินเดือน ${currentSalary} บาท แล้ว อัตราเงินเดือนที่ได้รับจะต้องไม่เกิน ${matchingData.salaryNewLimit} บาท`;
+      noticeMessage = `หมายเหตุ: จำนวนเงินที่ได้ปรับ ${salaryEarn.toLocaleString()} บาท เมื่อรวมกับอัตราเงินเดือน ${currentSalary.toLocaleString()} บาท แล้ว อัตราเงินเดือนที่ได้รับจะต้องไม่เกิน ${matchingData.salaryNewLimit.toLocaleString()} บาท`;
       newSalary = matchingData.salaryNewLimit;
       salaryEarn = matchingData.salaryNewLimit - currentSalary;
     }
 
-    document.getElementById("result").innerHTML = `จำนวนเงินที่ได้ปรับ: ${salaryEarn} บาท, อัตราเงินเดือนที่ได้รับ: ${newSalary} บาท<br> ${noticeMessage}`;
+    document.getElementById("result").innerHTML = `จำนวนเงินที่ได้ปรับ: ${salaryEarn.toLocaleString()} บาท, อัตราเงินเดือนที่ได้รับ: ${newSalary.toLocaleString()} บาท<br> ${noticeMessage}`;
   } else {
     document.getElementById("result").innerHTML =
       "ไม่พบข้อมูลการปรับอัตราเงินเดือนที่สอดคล้องกับวุฒิการศึกษาและอัตราเงินเดือนตามที่ท่านระบุ กรุณาตรวจสอบข้อมูลวุฒิการศึกษาและอัตราเงินเดือนปัจจุบันของท่านอีกครั้ง หากมีข้อสงสัยหรือต้องการข้อมูลเพิ่มเติม สามารถติดต่อสอบถามได้ที่หมายเลขโทรศัพท์ 0 2141 5192";
