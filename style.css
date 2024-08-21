@@ -7,6 +7,10 @@
   font-family: "Prompt", sans-serif;
 }
 
+.container {
+  padding: 0 20px 0 20px;
+}
+
 /* Add this to your style.css */
 .form-select {
   max-width: 100%; /* Ensures the select element does not overflow its container */
