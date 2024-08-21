@@ -73,7 +73,8 @@ document.getElementById("salaryCalcForm").addEventListener("submit", function (e
       salaryEarn = matchingData.salaryNewLimit - currentSalary;
     }
 
-    document.getElementById("result").innerHTML = `<div style="line-height: 2;">
+    document.getElementById("result").innerHTML = `
+    <div style="line-height: 2;">
         👩‍💻 <strong>จำนวนเงินที่ได้ปรับ : ${salaryEarn.toLocaleString()} บาท</strong>
         <br>👨‍💻 <strong>อัตราเงินเดือนที่ได้รับ : ${newSalary.toLocaleString()} บาท</strong>
         <br> ${noticeMessage}
